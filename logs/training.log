@@ -1,0 +1,85 @@
+2026-11-05 00:58:40,752 | INFO | heineken_training | ==============================================
+2026-11-05 00:58:40,752 | INFO | heineken_training | HEINEKEN ANALYTICS - TREINAMENTO RANDOM FOREST
+2026-11-05 00:58:40,752 | INFO | heineken_training | Ativos: HEIA.AS, HEINY
+2026-11-05 00:58:40,753 | INFO | heineken_training | Versão do modelo: 1.0.0
+2026-11-05 00:58:40,753 | INFO | heineken_training | ==============================================
+2026-11-05 00:58:40,834 | INFO | heineken_training | ============================================================
+2026-11-05 00:58:40,834 | INFO | heineken_training | TREINAMENTO - HEIA.AS (asset_id=1)
+2026-11-05 00:58:40,834 | INFO | heineken_training | ============================================================
+2026-11-05 00:58:40,889 | INFO | heineken_training | HEIA.AS: 1281 linhas lidas de analytical_data.
+2026-11-05 00:58:40,895 | INFO | heineken_training | HEIA.AS: treino=1008 linhas (2021-11-05 a 2025-10-10) | teste=252 linhas (2025-10-13 a 2026-10-07)
+2026-11-05 00:58:41,206 | INFO | heineken_training |   CV fold 1/5: treino=168 validação=168 MAE=0.9563
+2026-11-05 00:58:41,492 | INFO | heineken_training |   CV fold 2/5: treino=336 validação=168 MAE=1.1544
+2026-11-05 00:58:41,770 | INFO | heineken_training |   CV fold 3/5: treino=504 validação=168 MAE=0.8381
+2026-11-05 00:58:42,063 | INFO | heineken_training |   CV fold 4/5: treino=672 validação=168 MAE=7.6769
+2026-11-05 00:58:42,360 | INFO | heineken_training |   CV fold 5/5: treino=840 validação=168 MAE=0.9639
+2026-11-05 00:58:42,670 | INFO | heineken_training | ------------------------------------------------------------
+2026-11-05 00:58:42,670 | INFO | heineken_training | RESULTADOS - HEIA.AS (período de teste)
+2026-11-05 00:58:42,670 | INFO | heineken_training | ------------------------------------------------------------
+2026-11-05 00:58:42,670 | INFO | heineken_training | Random Forest          MAE=0.8089  RMSE=1.0408  R²=0.9205
+2026-11-05 00:58:42,670 | INFO | heineken_training | Baseline (amanhã=hoje) MAE=0.7415  RMSE=0.9595  R²=0.9324
+2026-11-05 00:58:42,670 | INFO | heineken_training | CV temporal (treino): MAE médio=2.3179 ± 2.6814
+2026-11-05 00:58:42,670 | WARNING | heineken_training | O modelo NÃO superou o baseline em MAE. Interprete as previsões com cautela.
+2026-11-05 00:58:42,714 | INFO | heineken_training | Top 5 features: close_price=0.969, sma_5=0.023, volatility_20d=0.001, return_1d=0.001, return_5d=0.001
+2026-11-05 00:58:42,758 | INFO | heineken_training | HEIA.AS: previsão para 2026-10-09 = 70.0661 (último fechamento: 70.7800)
+2026-11-05 00:58:42,916 | INFO | heineken_training | Modelo salvo: C:\Users\AMD\Desktop\CERTIFICADOS\PROJETOS\MACHINE LEARNING\PI Heineken\heineken_predictive_analysis\models\rf_HEIA_AS_1_0_0.joblib
+2026-11-05 00:58:42,971 | INFO | heineken_training | predictions: 0 removidas (execução anterior), 253 inseridas (asset_id=1, versão=1.0.0).
+2026-11-05 00:58:42,972 | INFO | heineken_training | ============================================================
+2026-11-05 00:58:42,973 | INFO | heineken_training | TREINAMENTO - HEINY (asset_id=2)
+2026-11-05 00:58:42,973 | INFO | heineken_training | ============================================================
+2026-11-05 00:58:43,023 | INFO | heineken_training | HEINY: 1255 linhas lidas de analytical_data.
+2026-11-05 00:58:43,027 | INFO | heineken_training | HEINY: treino=987 linhas (2021-11-05 a 2025-10-13) | teste=247 linhas (2025-10-14 a 2026-10-07)
+2026-11-05 00:58:43,301 | INFO | heineken_training |   CV fold 1/5: treino=167 validação=164 MAE=1.3556
+2026-11-05 00:58:43,582 | INFO | heineken_training |   CV fold 2/5: treino=331 validação=164 MAE=0.5725
+2026-11-05 00:58:43,864 | INFO | heineken_training |   CV fold 3/5: treino=495 validação=164 MAE=0.5095
+2026-11-05 00:58:44,144 | INFO | heineken_training |   CV fold 4/5: treino=659 validação=164 MAE=2.6390
+2026-11-05 00:58:44,430 | INFO | heineken_training |   CV fold 5/5: treino=823 validação=164 MAE=0.6027
+2026-11-05 00:58:44,730 | INFO | heineken_training | ------------------------------------------------------------
+2026-11-05 00:58:44,730 | INFO | heineken_training | RESULTADOS - HEINY (período de teste)
+2026-11-05 00:58:44,731 | INFO | heineken_training | ------------------------------------------------------------
+2026-11-05 00:58:44,731 | INFO | heineken_training | Random Forest          MAE=0.4782  RMSE=0.6126  R²=0.9173
+2026-11-05 00:58:44,731 | INFO | heineken_training | Baseline (amanhã=hoje) MAE=0.4485  RMSE=0.5849  R²=0.9246
+2026-11-05 00:58:44,731 | INFO | heineken_training | CV temporal (treino): MAE médio=1.1358 ± 0.8126
+2026-11-05 00:58:44,731 | WARNING | heineken_training | O modelo NÃO superou o baseline em MAE. Interprete as previsões com cautela.
+2026-11-05 00:58:44,772 | INFO | heineken_training | Top 5 features: close_price=0.981, sma_5=0.006, sma_10=0.002, volatility_20d=0.002, sma_20=0.001
+2026-11-05 00:58:44,813 | INFO | heineken_training | HEINY: previsão para 2026-10-09 = 39.7354 (último fechamento: 39.9000)
+2026-11-05 00:58:44,974 | INFO | heineken_training | Modelo salvo: C:\Users\AMD\Desktop\CERTIFICADOS\PROJETOS\MACHINE LEARNING\PI Heineken\heineken_predictive_analysis\models\rf_HEINY_1_0_0.joblib
+2026-11-05 00:58:45,006 | INFO | heineken_training | predictions: 0 removidas (execução anterior), 248 inseridas (asset_id=2, versão=1.0.0).
+2026-11-05 00:58:45,012 | INFO | heineken_training | ============================================================
+2026-11-05 00:58:45,012 | INFO | heineken_training | RESUMO DO TREINAMENTO
+2026-11-05 00:58:45,012 | INFO | heineken_training | ============================================================
+2026-11-05 00:58:45,012 | INFO | heineken_training | HEIA.AS  MAE=0.8089 RMSE=1.0408 R²=0.9205 | baseline MAE=0.7415 | previsões gravadas=253
+2026-11-05 00:58:45,013 | INFO | heineken_training | HEINY    MAE=0.4782 RMSE=0.6126 R²=0.9173 | baseline MAE=0.4485 | previsões gravadas=248
+2026-11-05 00:58:45,013 | INFO | heineken_training | Treinamento concluído com sucesso.
+2026-11-05 00:58:48,105 | INFO | heineken_training | ==============================================
+2026-11-05 00:58:48,105 | INFO | heineken_training | HEINEKEN ANALYTICS - TREINAMENTO RANDOM FOREST
+2026-11-05 00:58:48,105 | INFO | heineken_training | Ativos: HEIA.AS
+2026-11-05 00:58:48,106 | INFO | heineken_training | Versão do modelo: 1.0.0
+2026-11-05 00:58:48,106 | INFO | heineken_training | ==============================================
+2026-11-05 00:58:48,131 | INFO | heineken_training | ============================================================
+2026-11-05 00:58:48,131 | INFO | heineken_training | TREINAMENTO - HEIA.AS (asset_id=1)
+2026-11-05 00:58:48,131 | INFO | heineken_training | ============================================================
+2026-11-05 00:58:48,179 | INFO | heineken_training | HEIA.AS: 1281 linhas lidas de analytical_data.
+2026-11-05 00:58:48,183 | INFO | heineken_training | HEIA.AS: treino=1008 linhas (2021-11-05 a 2025-10-10) | teste=252 linhas (2025-10-13 a 2026-10-07)
+2026-11-05 00:58:48,643 | INFO | heineken_training |   CV fold 1/5: treino=168 validação=168 MAE=0.9626
+2026-11-05 00:58:49,078 | INFO | heineken_training |   CV fold 2/5: treino=336 validação=168 MAE=1.1525
+2026-11-05 00:58:49,551 | INFO | heineken_training |   CV fold 3/5: treino=504 validação=168 MAE=0.8421
+2026-11-05 00:58:50,009 | INFO | heineken_training |   CV fold 4/5: treino=672 validação=168 MAE=7.6631
+2026-11-05 00:58:50,693 | INFO | heineken_training |   CV fold 5/5: treino=840 validação=168 MAE=0.9624
+2026-11-05 00:58:51,185 | INFO | heineken_training | ------------------------------------------------------------
+2026-11-05 00:58:51,185 | INFO | heineken_training | RESULTADOS - HEIA.AS (período de teste)
+2026-11-05 00:58:51,185 | INFO | heineken_training | ------------------------------------------------------------
+2026-11-05 00:58:51,185 | INFO | heineken_training | Random Forest          MAE=0.8086  RMSE=1.0422  R²=0.9202
+2026-11-05 00:58:51,186 | INFO | heineken_training | Baseline (amanhã=hoje) MAE=0.7415  RMSE=0.9595  R²=0.9324
+2026-11-05 00:58:51,186 | INFO | heineken_training | CV temporal (treino): MAE médio=2.3165 ± 2.6751
+2026-11-05 00:58:51,186 | WARNING | heineken_training | O modelo NÃO superou o baseline em MAE. Interprete as previsões com cautela.
+2026-11-05 00:58:51,247 | INFO | heineken_training | Top 5 features: close_price=0.964, sma_5=0.026, sma_10=0.002, volatility_20d=0.001, return_1d=0.001
+2026-11-05 00:58:51,247 | INFO | heineken_training | HEIA.AS: reajustando o modelo com treino+teste (--refit-full).
+2026-11-05 00:58:51,745 | INFO | heineken_training | HEIA.AS: previsão para 2026-10-09 = 70.2457 (último fechamento: 70.7800)
+2026-11-05 00:58:52,057 | INFO | heineken_training | Modelo salvo: C:\Users\AMD\Desktop\CERTIFICADOS\PROJETOS\MACHINE LEARNING\PI Heineken\heineken_predictive_analysis\models\rf_HEIA_AS_1_0_0.joblib
+2026-11-05 00:58:52,091 | INFO | heineken_training | predictions: 253 removidas (execução anterior), 253 inseridas (asset_id=1, versão=1.0.0).
+2026-11-05 00:58:52,100 | INFO | heineken_training | ============================================================
+2026-11-05 00:58:52,100 | INFO | heineken_training | RESUMO DO TREINAMENTO
+2026-11-05 00:58:52,100 | INFO | heineken_training | ============================================================
+2026-11-05 00:58:52,100 | INFO | heineken_training | HEIA.AS  MAE=0.8086 RMSE=1.0422 R²=0.9202 | baseline MAE=0.7415 | previsões gravadas=253
+2026-11-05 00:58:52,100 | INFO | heineken_training | Treinamento concluído com sucesso.

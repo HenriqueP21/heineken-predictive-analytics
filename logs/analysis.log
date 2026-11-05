@@ -1,0 +1,165 @@
+2026-11-05 00:48:55,752 | INFO | heineken_analysis | ==============================================
+2026-11-05 00:48:55,752 | INFO | heineken_analysis | HEINEKEN ANALYTICS - ANÁLISE EXPLORATÓRIA (EDA)
+2026-11-05 00:48:55,752 | INFO | heineken_analysis | Ativos: HEIA.AS, HEINY
+2026-11-05 00:48:55,753 | INFO | heineken_analysis | ==============================================
+2026-11-05 00:48:56,186 | INFO | heineken_analysis | analytical_data carregada: 2,536 linhas, 2 ativos.
+2026-11-05 00:48:56,227 | INFO | heineken_analysis | Valores ausentes (esperados nas janelas iniciais e no target da última linha): return_1d=2, return_5d=10, return_20d=40, sma_5=8, sma_10=18, sma_20=38, volatility_5d=10, volatility_20d=40, price_sma5_ratio=8, price_sma20_ratio=38, target_next_close=2
+2026-11-05 00:48:56,235 | INFO | heineken_analysis | ============================================================
+2026-11-05 00:48:56,235 | INFO | heineken_analysis | ESTATÍSTICAS DESCRITIVAS - HEIA.AS
+2026-11-05 00:48:56,235 | INFO | heineken_analysis | ============================================================
+2026-11-05 00:48:56,235 | INFO | heineken_analysis | Início da série                      2021-10-08
+2026-11-05 00:48:56,235 | INFO | heineken_analysis | Fim da série                         2026-10-08
+2026-11-05 00:48:56,235 | INFO | heineken_analysis | Observações de retorno               1,280
+2026-11-05 00:48:56,236 | INFO | heineken_analysis | Retorno acumulado no período         -14.88%
+2026-11-05 00:48:56,236 | INFO | heineken_analysis | Retorno diário médio                 -0.0099%
+2026-11-05 00:48:56,236 | INFO | heineken_analysis | Retorno diário mediano               +0.0000%
+2026-11-05 00:48:56,236 | INFO | heineken_analysis | Desvio-padrão do retorno diário      1.3954%
+2026-11-05 00:48:56,236 | INFO | heineken_analysis | Retorno anualizado (média x 252)     -2.50%
+2026-11-05 00:48:56,236 | INFO | heineken_analysis | Volatilidade anualizada              22.15%
+2026-11-05 00:48:56,236 | INFO | heineken_analysis | Pior retorno diário                  -10.14%
+2026-11-05 00:48:56,236 | INFO | heineken_analysis | Melhor retorno diário                +14.10%
+2026-11-05 00:48:56,236 | INFO | heineken_analysis | VaR histórico 95% (1 dia)            -2.08%
+2026-11-05 00:48:56,237 | INFO | heineken_analysis | Assimetria dos retornos              0.177
+2026-11-05 00:48:56,237 | INFO | heineken_analysis | Curtose em excesso                   13.111
+2026-11-05 00:48:56,237 | INFO | heineken_analysis | Drawdown máximo                      -37.50%
+2026-11-05 00:48:56,237 | INFO | heineken_analysis | Volatilidade 20d média               1.3160%
+2026-11-05 00:48:56,237 | INFO | heineken_analysis | Volume médio                         685,531
+2026-11-05 00:48:56,237 | INFO | heineken_analysis | Volume mediano                       623,805
+2026-11-05 00:48:56,237 | INFO | heineken_analysis | Volume máximo                        3,597,691
+2026-11-05 00:48:56,237 | INFO | heineken_analysis | Dias com volume zero                 0
+2026-11-05 00:48:56,238 | INFO | heineken_analysis | ============================================================
+2026-11-05 00:48:56,238 | INFO | heineken_analysis | ESTATÍSTICAS DESCRITIVAS - HEINY
+2026-11-05 00:48:56,238 | INFO | heineken_analysis | ============================================================
+2026-11-05 00:48:56,238 | INFO | heineken_analysis | Início da série                      2021-10-08
+2026-11-05 00:48:56,238 | INFO | heineken_analysis | Fim da série                         2026-10-08
+2026-11-05 00:48:56,238 | INFO | heineken_analysis | Observações de retorno               1,254
+2026-11-05 00:48:56,238 | INFO | heineken_analysis | Retorno acumulado no período         -15.71%
+2026-11-05 00:48:56,238 | INFO | heineken_analysis | Retorno diário médio                 -0.0104%
+2026-11-05 00:48:56,238 | INFO | heineken_analysis | Retorno diário mediano               -0.0175%
+2026-11-05 00:48:56,238 | INFO | heineken_analysis | Desvio-padrão do retorno diário      1.5473%
+2026-11-05 00:48:56,239 | INFO | heineken_analysis | Retorno anualizado (média x 252)     -2.61%
+2026-11-05 00:48:56,239 | INFO | heineken_analysis | Volatilidade anualizada              24.56%
+2026-11-05 00:48:56,239 | INFO | heineken_analysis | Pior retorno diário                  -9.99%
+2026-11-05 00:48:56,239 | INFO | heineken_analysis | Melhor retorno diário                +15.11%
+2026-11-05 00:48:56,239 | INFO | heineken_analysis | VaR histórico 95% (1 dia)            -2.25%
+2026-11-05 00:48:56,239 | INFO | heineken_analysis | Assimetria dos retornos              0.190
+2026-11-05 00:48:56,239 | INFO | heineken_analysis | Curtose em excesso                   10.991
+2026-11-05 00:48:56,239 | INFO | heineken_analysis | Drawdown máximo                      -41.57%
+2026-11-05 00:48:56,239 | INFO | heineken_analysis | Volatilidade 20d média               1.4660%
+2026-11-05 00:48:56,240 | INFO | heineken_analysis | Volume médio                         113,284
+2026-11-05 00:48:56,240 | INFO | heineken_analysis | Volume mediano                       72,000
+2026-11-05 00:48:56,240 | INFO | heineken_analysis | Volume máximo                        1,281,300
+2026-11-05 00:48:56,240 | INFO | heineken_analysis | Dias com volume zero                 0
+2026-11-05 00:48:56,240 | INFO | heineken_analysis | ============================================================
+2026-11-05 00:48:56,242 | INFO | heineken_analysis | Gerando gráfico: histórico de preço ajustado
+2026-11-05 00:48:56,654 | INFO | heineken_analysis | Gráfico salvo: C:\Users\AMD\Desktop\CERTIFICADOS\PROJETOS\MACHINE LEARNING\PI Heineken\heineken_predictive_analysis\reports\figures\price_history_adjusted.png
+2026-11-05 00:48:56,654 | INFO | heineken_analysis | Gerando gráfico: histórico base 100
+2026-11-05 00:48:56,868 | INFO | heineken_analysis | Gráfico salvo: C:\Users\AMD\Desktop\CERTIFICADOS\PROJETOS\MACHINE LEARNING\PI Heineken\heineken_predictive_analysis\reports\figures\price_history_rebased.png
+2026-11-05 00:48:56,868 | INFO | heineken_analysis | Gerando gráfico: distribuição dos retornos
+2026-11-05 00:48:57,320 | INFO | heineken_analysis | Gráfico salvo: C:\Users\AMD\Desktop\CERTIFICADOS\PROJETOS\MACHINE LEARNING\PI Heineken\heineken_predictive_analysis\reports\figures\return_distribution.png
+2026-11-05 00:48:57,320 | INFO | heineken_analysis | Gerando gráfico: matriz de correlação
+2026-11-05 00:48:57,981 | INFO | heineken_analysis | Gráfico salvo: C:\Users\AMD\Desktop\CERTIFICADOS\PROJETOS\MACHINE LEARNING\PI Heineken\heineken_predictive_analysis\reports\figures\correlation_matrix_HEIA_AS.png
+2026-11-05 00:48:58,635 | INFO | heineken_analysis | Gráfico salvo: C:\Users\AMD\Desktop\CERTIFICADOS\PROJETOS\MACHINE LEARNING\PI Heineken\heineken_predictive_analysis\reports\figures\correlation_matrix_HEINY.png
+2026-11-05 00:48:58,635 | INFO | heineken_analysis | EDA concluída. 5 gráfico(s) salvos em C:\Users\AMD\Desktop\CERTIFICADOS\PROJETOS\MACHINE LEARNING\PI Heineken\heineken_predictive_analysis\reports\figures
+2026-11-05 00:49:00,236 | INFO | heineken_analysis | ==============================================
+2026-11-05 00:49:00,236 | INFO | heineken_analysis | HEINEKEN ANALYTICS - ANÁLISE EXPLORATÓRIA (EDA)
+2026-11-05 00:49:00,236 | INFO | heineken_analysis | Ativos: HEIA.AS
+2026-11-05 00:49:00,237 | INFO | heineken_analysis | ==============================================
+2026-11-05 00:49:00,380 | INFO | heineken_analysis | analytical_data carregada: 1,281 linhas, 1 ativos.
+2026-11-05 00:49:00,397 | INFO | heineken_analysis | Valores ausentes (esperados nas janelas iniciais e no target da última linha): return_1d=1, return_5d=5, return_20d=20, sma_5=4, sma_10=9, sma_20=19, volatility_5d=5, volatility_20d=20, price_sma5_ratio=4, price_sma20_ratio=19, target_next_close=1
+2026-11-05 00:49:00,401 | INFO | heineken_analysis | ============================================================
+2026-11-05 00:49:00,401 | INFO | heineken_analysis | ESTATÍSTICAS DESCRITIVAS - HEIA.AS
+2026-11-05 00:49:00,401 | INFO | heineken_analysis | ============================================================
+2026-11-05 00:49:00,401 | INFO | heineken_analysis | Início da série                      2021-10-08
+2026-11-05 00:49:00,401 | INFO | heineken_analysis | Fim da série                         2026-10-08
+2026-11-05 00:49:00,401 | INFO | heineken_analysis | Observações de retorno               1,280
+2026-11-05 00:49:00,402 | INFO | heineken_analysis | Retorno acumulado no período         -14.88%
+2026-11-05 00:49:00,402 | INFO | heineken_analysis | Retorno diário médio                 -0.0099%
+2026-11-05 00:49:00,402 | INFO | heineken_analysis | Retorno diário mediano               +0.0000%
+2026-11-05 00:49:00,402 | INFO | heineken_analysis | Desvio-padrão do retorno diário      1.3954%
+2026-11-05 00:49:00,402 | INFO | heineken_analysis | Retorno anualizado (média x 252)     -2.50%
+2026-11-05 00:49:00,402 | INFO | heineken_analysis | Volatilidade anualizada              22.15%
+2026-11-05 00:49:00,402 | INFO | heineken_analysis | Pior retorno diário                  -10.14%
+2026-11-05 00:49:00,402 | INFO | heineken_analysis | Melhor retorno diário                +14.10%
+2026-11-05 00:49:00,402 | INFO | heineken_analysis | VaR histórico 95% (1 dia)            -2.08%
+2026-11-05 00:49:00,403 | INFO | heineken_analysis | Assimetria dos retornos              0.177
+2026-11-05 00:49:00,403 | INFO | heineken_analysis | Curtose em excesso                   13.111
+2026-11-05 00:49:00,403 | INFO | heineken_analysis | Drawdown máximo                      -37.50%
+2026-11-05 00:49:00,403 | INFO | heineken_analysis | Volatilidade 20d média               1.3160%
+2026-11-05 00:49:00,403 | INFO | heineken_analysis | Volume médio                         685,531
+2026-11-05 00:49:00,403 | INFO | heineken_analysis | Volume mediano                       623,805
+2026-11-05 00:49:00,403 | INFO | heineken_analysis | Volume máximo                        3,597,691
+2026-11-05 00:49:00,403 | INFO | heineken_analysis | Dias com volume zero                 0
+2026-11-05 00:49:00,403 | INFO | heineken_analysis | ============================================================
+2026-11-05 00:49:00,404 | INFO | heineken_analysis | Gerando gráfico: histórico de preço ajustado
+2026-11-05 00:49:00,599 | INFO | heineken_analysis | Gráfico salvo: C:\Users\AMD\Desktop\CERTIFICADOS\PROJETOS\MACHINE LEARNING\PI Heineken\heineken_predictive_analysis\reports\figures\price_history_adjusted.png
+2026-11-05 00:49:00,599 | INFO | heineken_analysis | Gerando gráfico: histórico base 100
+2026-11-05 00:49:00,604 | WARNING | heineken_analysis | Gráfico base 100 ignorado: é necessário mais de um ativo com datas em comum.
+2026-11-05 00:49:00,604 | INFO | heineken_analysis | Gerando gráfico: distribuição dos retornos
+2026-11-05 00:49:00,877 | INFO | heineken_analysis | Gráfico salvo: C:\Users\AMD\Desktop\CERTIFICADOS\PROJETOS\MACHINE LEARNING\PI Heineken\heineken_predictive_analysis\reports\figures\return_distribution.png
+2026-11-05 00:49:00,878 | INFO | heineken_analysis | Gerando gráfico: matriz de correlação
+2026-11-05 00:49:01,502 | INFO | heineken_analysis | Gráfico salvo: C:\Users\AMD\Desktop\CERTIFICADOS\PROJETOS\MACHINE LEARNING\PI Heineken\heineken_predictive_analysis\reports\figures\correlation_matrix_HEIA_AS.png
+2026-11-05 00:49:01,502 | INFO | heineken_analysis | EDA concluída. 3 gráfico(s) salvos em C:\Users\AMD\Desktop\CERTIFICADOS\PROJETOS\MACHINE LEARNING\PI Heineken\heineken_predictive_analysis\reports\figures
+2026-11-05 00:49:03,033 | INFO | heineken_analysis | ==============================================
+2026-11-05 00:49:03,033 | INFO | heineken_analysis | HEINEKEN ANALYTICS - ANÁLISE EXPLORATÓRIA (EDA)
+2026-11-05 00:49:03,033 | INFO | heineken_analysis | Ativos: HEIA.AS, HEINY
+2026-11-05 00:49:03,033 | INFO | heineken_analysis | ==============================================
+2026-11-05 00:49:03,233 | INFO | heineken_analysis | analytical_data carregada: 2,536 linhas, 2 ativos.
+2026-11-05 00:49:03,269 | INFO | heineken_analysis | Valores ausentes (esperados nas janelas iniciais e no target da última linha): return_1d=2, return_5d=10, return_20d=40, sma_5=8, sma_10=18, sma_20=38, volatility_5d=10, volatility_20d=40, price_sma5_ratio=8, price_sma20_ratio=38, target_next_close=2
+2026-11-05 00:49:03,275 | INFO | heineken_analysis | ============================================================
+2026-11-05 00:49:03,275 | INFO | heineken_analysis | ESTATÍSTICAS DESCRITIVAS - HEIA.AS
+2026-11-05 00:49:03,276 | INFO | heineken_analysis | ============================================================
+2026-11-05 00:49:03,276 | INFO | heineken_analysis | Início da série                      2021-10-08
+2026-11-05 00:49:03,276 | INFO | heineken_analysis | Fim da série                         2026-10-08
+2026-11-05 00:49:03,276 | INFO | heineken_analysis | Observações de retorno               1,280
+2026-11-05 00:49:03,276 | INFO | heineken_analysis | Retorno acumulado no período         -14.88%
+2026-11-05 00:49:03,276 | INFO | heineken_analysis | Retorno diário médio                 -0.0099%
+2026-11-05 00:49:03,276 | INFO | heineken_analysis | Retorno diário mediano               +0.0000%
+2026-11-05 00:49:03,276 | INFO | heineken_analysis | Desvio-padrão do retorno diário      1.3954%
+2026-11-05 00:49:03,277 | INFO | heineken_analysis | Retorno anualizado (média x 252)     -2.50%
+2026-11-05 00:49:03,277 | INFO | heineken_analysis | Volatilidade anualizada              22.15%
+2026-11-05 00:49:03,277 | INFO | heineken_analysis | Pior retorno diário                  -10.14%
+2026-11-05 00:49:03,277 | INFO | heineken_analysis | Melhor retorno diário                +14.10%
+2026-11-05 00:49:03,277 | INFO | heineken_analysis | VaR histórico 95% (1 dia)            -2.08%
+2026-11-05 00:49:03,277 | INFO | heineken_analysis | Assimetria dos retornos              0.177
+2026-11-05 00:49:03,277 | INFO | heineken_analysis | Curtose em excesso                   13.111
+2026-11-05 00:49:03,277 | INFO | heineken_analysis | Drawdown máximo                      -37.50%
+2026-11-05 00:49:03,278 | INFO | heineken_analysis | Volatilidade 20d média               1.3160%
+2026-11-05 00:49:03,278 | INFO | heineken_analysis | Volume médio                         685,531
+2026-11-05 00:49:03,278 | INFO | heineken_analysis | Volume mediano                       623,805
+2026-11-05 00:49:03,278 | INFO | heineken_analysis | Volume máximo                        3,597,691
+2026-11-05 00:49:03,278 | INFO | heineken_analysis | Dias com volume zero                 0
+2026-11-05 00:49:03,278 | INFO | heineken_analysis | ============================================================
+2026-11-05 00:49:03,278 | INFO | heineken_analysis | ESTATÍSTICAS DESCRITIVAS - HEINY
+2026-11-05 00:49:03,278 | INFO | heineken_analysis | ============================================================
+2026-11-05 00:49:03,278 | INFO | heineken_analysis | Início da série                      2021-10-08
+2026-11-05 00:49:03,279 | INFO | heineken_analysis | Fim da série                         2026-10-08
+2026-11-05 00:49:03,279 | INFO | heineken_analysis | Observações de retorno               1,254
+2026-11-05 00:49:03,279 | INFO | heineken_analysis | Retorno acumulado no período         -15.71%
+2026-11-05 00:49:03,279 | INFO | heineken_analysis | Retorno diário médio                 -0.0104%
+2026-11-05 00:49:03,279 | INFO | heineken_analysis | Retorno diário mediano               -0.0175%
+2026-11-05 00:49:03,279 | INFO | heineken_analysis | Desvio-padrão do retorno diário      1.5473%
+2026-11-05 00:49:03,279 | INFO | heineken_analysis | Retorno anualizado (média x 252)     -2.61%
+2026-11-05 00:49:03,279 | INFO | heineken_analysis | Volatilidade anualizada              24.56%
+2026-11-05 00:49:03,279 | INFO | heineken_analysis | Pior retorno diário                  -9.99%
+2026-11-05 00:49:03,279 | INFO | heineken_analysis | Melhor retorno diário                +15.11%
+2026-11-05 00:49:03,280 | INFO | heineken_analysis | VaR histórico 95% (1 dia)            -2.25%
+2026-11-05 00:49:03,280 | INFO | heineken_analysis | Assimetria dos retornos              0.190
+2026-11-05 00:49:03,280 | INFO | heineken_analysis | Curtose em excesso                   10.991
+2026-11-05 00:49:03,280 | INFO | heineken_analysis | Drawdown máximo                      -41.57%
+2026-11-05 00:49:03,280 | INFO | heineken_analysis | Volatilidade 20d média               1.4660%
+2026-11-05 00:49:03,280 | INFO | heineken_analysis | Volume médio                         113,284
+2026-11-05 00:49:03,280 | INFO | heineken_analysis | Volume mediano                       72,000
+2026-11-05 00:49:03,280 | INFO | heineken_analysis | Volume máximo                        1,281,300
+2026-11-05 00:49:03,280 | INFO | heineken_analysis | Dias com volume zero                 0
+2026-11-05 00:49:03,280 | INFO | heineken_analysis | ============================================================
+2026-11-05 00:49:03,282 | INFO | heineken_analysis | Gerando gráfico: histórico de preço ajustado
+2026-11-05 00:49:03,676 | INFO | heineken_analysis | Gráfico salvo: reports\figures\price_history_adjusted.png
+2026-11-05 00:49:03,676 | INFO | heineken_analysis | Gerando gráfico: histórico base 100
+2026-11-05 00:49:03,904 | INFO | heineken_analysis | Gráfico salvo: reports\figures\price_history_rebased.png
+2026-11-05 00:49:03,904 | INFO | heineken_analysis | Gerando gráfico: distribuição dos retornos
+2026-11-05 00:49:04,353 | INFO | heineken_analysis | Gráfico salvo: reports\figures\return_distribution.png
+2026-11-05 00:49:04,353 | INFO | heineken_analysis | Gerando gráfico: matriz de correlação
+2026-11-05 00:49:05,040 | INFO | heineken_analysis | Gráfico salvo: reports\figures\correlation_matrix_HEIA_AS.png
+2026-11-05 00:49:05,701 | INFO | heineken_analysis | Gráfico salvo: reports\figures\correlation_matrix_HEINY.png
+2026-11-05 00:49:05,701 | INFO | heineken_analysis | EDA concluída. 5 gráfico(s) salvos em reports\figures
