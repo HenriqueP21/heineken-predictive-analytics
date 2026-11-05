@@ -389,14 +389,26 @@ def load_predictions(asset_id: int) -> pd.DataFrame:
             (asset_id,),
             PREDICTION_COLUMNS,
         )
-        for c in ("prediction_date", "target_date", "created_at"):
-            df[c] = pd.to_datetime(df[c])
-        for c in ("actual_value", "predicted_value", "mae", "rmse", "r2"):
-            df[c] = pd.to_numeric(df[c], errors="coerce")
-        return df
     except Exception as exc:
-        logger.warning("Banco indisponível para load_predictions (%s). Retornando estrutura vazia.", exc)
-        return pd.DataFrame(columns=list(PREDICTION_COLUMNS))
+        logger.warning("Banco indisponível para load_predictions (%s). Carregando data/predictions.csv.", exc)
+        csv_path = Path("data/predictions.csv")
+        if not csv_path.exists():
+            return pd.DataFrame(columns=list(PREDICTION_COLUMNS))
+        
+        full_df = pd.read_csv(csv_path)
+        ticker_target = "HEIA.AS" if asset_id == 1 else "HEINY"
+        df = full_df[full_df["ticker"] == ticker_target].copy()
+        if df.empty:
+            return pd.DataFrame(columns=list(PREDICTION_COLUMNS))
+
+    for c in ("prediction_date", "target_date", "created_at"):
+        if c in df.columns:
+            df[c] = pd.to_datetime(df[c])
+    for c in ("actual_value", "predicted_value", "mae", "rmse", "r2"):
+        if c in df.columns:
+            df[c] = pd.to_numeric(df[c], errors="coerce")
+            
+    return df
 
 
 # ============================================================
