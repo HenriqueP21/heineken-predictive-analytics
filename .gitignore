@@ -1,0 +1,6 @@
+.env
+.venv/
+__pycache__/
+logs/
+reports/figures/
+models/*.joblib
