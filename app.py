@@ -315,90 +315,88 @@ def _to_numeric(df: pd.DataFrame, columns: Sequence[str]) -> pd.DataFrame:
     return df
 
 
-@st.cache_data(ttl=CACHE_TTL_SECONDS, show_spinner="Carregando ativos...")
+@st.cache_data(ttl=CACHE_TTL_SECONDS, show_spinner=False)
 def load_assets() -> list[AssetInfo]:
-    df = run_query(
-        """
-        SELECT id, ticker, name, exchange, currency
-        FROM assets
-        WHERE active = TRUE
-        ORDER BY ticker
-        """,
-        (),
-        ("id", "ticker", "name", "exchange", "currency"),
-    )
-
-    return [
-        AssetInfo(
-            id=int(row.id),
-            ticker=str(row.ticker),
-            name=str(row.name),
-            exchange=str(row.exchange or "—"),
-            currency=str(row.currency or ""),
+    try:
+        df = run_query(
+            "SELECT id, ticker, name, exchange, currency FROM assets WHERE active = TRUE ORDER BY ticker",
+            (),
+            ("id", "ticker", "name", "exchange", "currency")
         )
-        for row in df.itertuples(index=False)
-    ]
+        return [
+            AssetInfo(int(r.id), str(r.ticker), str(r.name), str(r.exchange or "—"), str(r.currency or "")) 
+            for r in df.itertuples(index=False)
+        ]
+    except Exception as exc:
+        logger.warning("Banco indisponível para load_assets (%s). Usando fallback estático.", exc)
+        # Fallback estático caso o MySQL não responda na nuvem
+        return [
+            AssetInfo(id=1, ticker="HEIA.AS", name="Heineken N.V.", exchange="Euronext Amsterdam", currency="EUR"),
+            AssetInfo(id=2, ticker="HEINY", name="Heineken N.V. ADR", exchange="OTC Markets", currency="USD"),
+        ]
 
 
-@st.cache_data(ttl=CACHE_TTL_SECONDS, show_spinner="Carregando preços...")
+@st.cache_data(ttl=CACHE_TTL_SECONDS, show_spinner=False)
 def load_asset_data(asset_id: int) -> pd.DataFrame:
-    """
-    Série diária do ativo: `market_prices` (OHLC, ajustado, volume)
-    combinada com `analytical_data` (retornos, SMAs, volatilidades).
-    """
-
-    columns = ("price_date",) + PRICE_COLUMNS + FEATURE_COLUMNS
-
-    price_select = ", ".join(f"mp.{column}" for column in PRICE_COLUMNS)
-    feature_select = ", ".join(f"ad.{column}" for column in FEATURE_COLUMNS)
-
-    # Consulta LEFT JOIN: nem todos os dias têm dados analíticos (ex: feriados).
-    df = run_query(
-        f"""
-        SELECT
-            mp.price_date,
-            {price_select},
-            {feature_select}
-        FROM market_prices AS mp
-        LEFT JOIN analytical_data AS ad
-            ON ad.asset_id = mp.asset_id
-           AND ad.price_date = mp.price_date
-        WHERE mp.asset_id = %s
-        ORDER BY mp.price_date
-        """,
-        (asset_id,),
-        columns,
-    )
+    try:
+        columns = ("price_date",) + PRICE_COLUMNS + FEATURE_COLUMNS
+        p_sel = ", ".join(f"mp.{c}" for c in PRICE_COLUMNS)
+        f_sel = ", ".join(f"ad.{c}" for c in FEATURE_COLUMNS)
+        
+        df = run_query(
+            f"""
+            SELECT mp.price_date, {p_sel}, {f_sel}
+            FROM market_prices AS mp
+            LEFT JOIN analytical_data AS ad ON ad.asset_id = mp.asset_id AND ad.price_date = mp.price_date
+            WHERE mp.asset_id = %s ORDER BY mp.price_date
+            """,
+            (asset_id,),
+            columns,
+        )
+    except Exception as exc:
+        logger.warning("Banco indisponível para load_asset_data (%s). Carregando data/analytical_data.csv.", exc)
+        # Fallback: lê o arquivo CSV que enviamos para a pasta data/ do GitHub
+        csv_path = Path("data/analytical_data.csv")
+        if not csv_path.exists():
+            return pd.DataFrame()
+        
+        full_df = pd.read_csv(csv_path)
+        # Filtra pelo ticker selecionado (1: HEIA.AS, 2: HEINY)
+        ticker_target = "HEIA.AS" if asset_id == 1 else "HEINY"
+        df = full_df[full_df["ticker"] == ticker_target].copy()
+        
+        # Garante a existência das colunas esperadas pelo app.py
+        if "open_price" not in df.columns and "close_price" in df.columns:
+            df["open_price"] = df["close_price"]
+            df["high_price"] = df["close_price"]
+            df["low_price"] = df["close_price"]
+            df["adjusted_close"] = df["close_price"]
 
     df["price_date"] = pd.to_datetime(df["price_date"])
-    df = _to_numeric(df, columns[1:])
-
-    # Fechamento ajustado com alternativa ao fechamento simples.
-    df["adj_close"] = df["adjusted_close"].fillna(df["close_price"])
-
+    numeric_cols = [c for c in df.columns if c != "price_date" and c != "ticker"]
+    for c in numeric_cols:
+        df[c] = pd.to_numeric(df[c], errors="coerce")
+        
+    df["adj_close"] = df["adjusted_close"].fillna(df["close_price"]) if "adjusted_close" in df.columns else df["close_price"]
     return df
 
 
-@st.cache_data(ttl=CACHE_TTL_SECONDS, show_spinner="Carregando previsões...")
+@st.cache_data(ttl=CACHE_TTL_SECONDS, show_spinner=False)
 def load_predictions(asset_id: int) -> pd.DataFrame:
-    df = run_query(
-        f"""
-        SELECT {", ".join(PREDICTION_COLUMNS)}
-        FROM predictions
-        WHERE asset_id = %s
-        ORDER BY prediction_date
-        """,
-        (asset_id,),
-        PREDICTION_COLUMNS,
-    )
-
-    for column in ("prediction_date", "target_date", "created_at"):
-        df[column] = pd.to_datetime(df[column])
-
-    return _to_numeric(
-        df,
-        ("actual_value", "predicted_value", "mae", "rmse", "r2"),
-    )
+    try:
+        df = run_query(
+            f"SELECT {', '.join(PREDICTION_COLUMNS)} FROM predictions WHERE asset_id = %s ORDER BY prediction_date",
+            (asset_id,),
+            PREDICTION_COLUMNS,
+        )
+        for c in ("prediction_date", "target_date", "created_at"):
+            df[c] = pd.to_datetime(df[c])
+        for c in ("actual_value", "predicted_value", "mae", "rmse", "r2"):
+            df[c] = pd.to_numeric(df[c], errors="coerce")
+        return df
+    except Exception as exc:
+        logger.warning("Banco indisponível para load_predictions (%s). Retornando estrutura vazia.", exc)
+        return pd.DataFrame(columns=list(PREDICTION_COLUMNS))
 
 
 # ============================================================
